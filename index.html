@@ -143,6 +143,14 @@
             filter: brightness(1.1);
         }
 
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 48px;
+            font-weight: 800;
+            letter-spacing: -0.04em;
+        }
+
         .features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -170,14 +178,40 @@
             font-size: 1rem;
         }
 
+        /* FAQ Styling */
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .faq-item {
+            background: var(--card);
+            padding: 32px;
+            border-radius: 20px;
+            border: 1px solid var(--card-border);
+            text-align: left;
+        }
+
+        .faq-item h4 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            color: var(--accent);
+        }
+
+        .faq-item p {
+            color: var(--muted);
+            margin: 0;
+            font-size: 1rem;
+        }
+
         .support-cta {
             padding: 100px 0;
             text-align: center;
             background: linear-gradient(180deg, transparent, rgba(75, 29, 124, 0.1));
             border-radius: var(--radius);
         }
-
-        .support-cta h2 { font-size: 2.5rem; margin-bottom: 16px; }
 
         .email-link {
             color: var(--accent);
@@ -207,6 +241,7 @@
         @media (max-width: 600px) {
             h1 { font-size: 3.5rem; }
             .hero { padding: 80px 0 60px; }
+            .faq-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -219,6 +254,7 @@
             </a>
             <nav class="nav-links">
                 <a href="#features">Features</a>
+                <a href="#faq">FAQ</a>
                 <a href="#support">Support</a>
                 <a href="privacy.html">Privacy</a>
             </nav>
@@ -230,8 +266,8 @@
             <div class="container">
                 <img src="Octopus.png" alt="OctoJam Logo" class="main-logo">
                 <h1>Music as One.</h1>
-                <p class="lead">Sync multiple iPhones instantly to amplify your music. Build a collective speaker system with your friends.</p>
-                <a href="mailto:tonybonny2001@gmail.com" class="btn">Contact Support</a>
+                <p class="lead">Sync multiple iPhones instantly to amplify your music. Build a collective speaker system with your friends in seconds.</p>
+                <a href="mailto:tonybonny2001@gmail.com" class="btn">Get in Touch</a>
             </div>
         </section>
 
@@ -254,10 +290,34 @@
             </div>
         </section>
 
+        <section id="faq">
+            <div class="container">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h4>How does the sync work?</h4>
+                        <p>OctoJam uses custom network algorithms to calculate and adjust for latency between devices, ensuring audio is played at the exact same moment on all phones.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>Do I need Wi-Fi or Internet?</h4>
+                        <p>No internet connection is required. OctoJam uses a local mesh network via Wi-Fi and Bluetooth to connect devices directly.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>How many phones can I sync?</h4>
+                        <p>You can sync multiple devices! The more phones that join, the louder and more immersive the sound becomes.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>Is my data private?</h4>
+                        <p>Absolutely. OctoJam does not collect any personal data or track what you listen to. Everything happens locally on your devices.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="support" class="support-cta">
             <div class="container">
-                <h2>Need Assistance?</h2>
-                <p class="lead">If you have questions, feedback, or need help with synchronization, we're here for you.</p>
+                <h2>Still have questions?</h2>
+                <p class="lead">If you have feedback or need technical assistance with your jam, we're here to help.</p>
                 <a href="mailto:tonybonny2001@gmail.com" class="email-link">tonybonny2001@gmail.com</a>
             </div>
         </section>
@@ -266,7 +326,7 @@
     <footer>
         <div class="container">
             <div class="team-logo">AhPaolo Team</div>
-            <p>Handcrafted with care by Antonio, Giulia, Antonella, Antimo, Pierluigi, & Alessandro.</p>
+            <p>Handcrafted by Antonio, Giulia, Antonella, Antimo, Pierluigi, & Alessandro.</p>
             <p style="margin-top: 8px; opacity: 0.5;">&copy; 2026 OctoJam. All rights reserved.</p>
         </div>
     </footer>
