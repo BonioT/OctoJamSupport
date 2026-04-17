@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OctoJam — Sync, Play, Vibe.</title>
+    <meta name="description" content="Official support page for OctoJam. Amplify your music by syncing multiple devices in perfect harmony." />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="Octopus.png" />
+    
+    <style>
+        :root {
+            --bg: #05030B;
+            --primary: #4B1D7C;
+            --accent: #A855F7;
+            --accent-glow: rgba(168, 85, 247, 0.4);
+            --text: #ffffff;
+            --muted: rgba(255, 255, 255, 0.55);
+            --card: rgba(255, 255, 255, 0.04);
+            --card-border: rgba(255, 255, 255, 0.1);
+            --radius: 24px;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", sans-serif;
+            background-color: var(--bg);
+            background: radial-gradient(circle at 50% -20%, #2D134D 0%, #05030B 75%);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: min(1000px, calc(100% - 48px));
+            margin: 0 auto;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            background: rgba(5, 3, 11, 0.7);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 0;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.2rem;
+            font-weight: 800;
+            letter-spacing: 0.1em;
+            text-decoration: none;
+            color: var(--text);
+            text-transform: uppercase;
+        }
+
+        .brand img {
+            width: 32px;
+            height: 32px;
+            filter: drop-shadow(0 0 8px var(--accent-glow));
+        }
+
+        .nav-links a {
+            color: var(--muted);
+            text-decoration: none;
+            margin-left: 24px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--accent); }
+
+        .hero {
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+
+        .hero img.main-logo {
+            width: 160px;
+            height: 160px;
+            margin-bottom: 40px;
+            filter: drop-shadow(0 20px 40px rgba(0,0,0,0.5)) drop-shadow(0 0 30px var(--accent-glow));
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        h1 {
+            font-size: clamp(3rem, 10vw, 5.5rem);
+            font-weight: 800;
+            letter-spacing: -0.05em;
+            line-height: 1;
+            margin-bottom: 24px;
+            background: linear-gradient(180deg, #FFFFFF 0%, rgba(255,255,255,0.6) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .lead {
+            font-size: 1.4rem;
+            color: var(--muted);
+            max-width: 600px;
+            margin: 0 auto 48px;
+            font-weight: 400;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 18px 40px;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 999px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            box-shadow: 0 10px 25px var(--accent-glow);
+            transition: 0.4s cubic-bezier(0.15, 0, 0.15, 1);
+        }
+
+        .btn:hover {
+            transform: translateY(-4px) scale(1.02);
+            filter: brightness(1.1);
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin: 80px 0;
+        }
+
+        .feature-card {
+            background: var(--card);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius);
+            padding: 40px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .feature-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+            color: var(--accent);
+        }
+
+        .feature-card p {
+            color: var(--muted);
+            font-size: 1rem;
+        }
+
+        .support-cta {
+            padding: 100px 0;
+            text-align: center;
+            background: linear-gradient(180deg, transparent, rgba(75, 29, 124, 0.1));
+            border-radius: var(--radius);
+        }
+
+        .support-cta h2 { font-size: 2.5rem; margin-bottom: 16px; }
+
+        .email-link {
+            color: var(--accent);
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        footer {
+            padding: 80px 0 40px;
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        .team-logo {
+            font-weight: 900;
+            letter-spacing: 0.2em;
+            color: var(--accent);
+            margin-bottom: 12px;
+            opacity: 0.8;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 3.5rem; }
+            .hero { padding: 80px 0 60px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container nav">
+            <a href="#" class="brand">
+                <img src="Octopus.png" alt="OctoJam">
+                OctoJam
+            </a>
+            <nav class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#support">Support</a>
+                <a href="privacy.html">Privacy</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <img src="Octopus.png" alt="OctoJam Logo" class="main-logo">
+                <h1>Music as One.</h1>
+                <p class="lead">Sync multiple iPhones instantly to amplify your music. Build a collective speaker system with your friends.</p>
+                <a href="mailto:tonybonny2001@gmail.com" class="btn">Contact Support</a>
+            </div>
+        </section>
+
+        <section id="features">
+            <div class="container">
+                <div class="features">
+                    <div class="feature-card">
+                        <h3>Perfect Sync</h3>
+                        <p>Our advanced clock-offset correction ensures every device plays in perfect harmony with millisecond precision.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Amplified Sound</h3>
+                        <p>Watch your sound level grow as more friends join. Create a powerful surround system using only your phones.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Vibe Together</h3>
+                        <p>Host a room or join a jam. Share your unique character, react with emojis, and experience music together.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="support" class="support-cta">
+            <div class="container">
+                <h2>Need Assistance?</h2>
+                <p class="lead">If you have questions, feedback, or need help with synchronization, we're here for you.</p>
+                <a href="mailto:tonybonny2001@gmail.com" class="email-link">tonybonny2001@gmail.com</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="team-logo">AhPaolo Team</div>
+            <p>Handcrafted with care by Antonio, Giulia, Antonella, Antimo, Pierluigi, & Alessandro.</p>
+            <p style="margin-top: 8px; opacity: 0.5;">&copy; 2026 OctoJam. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
